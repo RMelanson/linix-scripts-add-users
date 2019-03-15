@@ -2,6 +2,8 @@
 pkg=ADD_USERS
 gitRepo="linux-scripts-utils-add-users"
 installDir="/tmp/scripts/utils/$pkg"
+USERS=$installDir/users/*
+
 appServicesDir=/etc/init.d
 appProcessDir=$appServicesDir/appProcesses
 daemon=appServices.d

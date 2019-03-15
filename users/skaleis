@@ -1,0 +1,4 @@
+password=ineedtolearn
+pvtKey=$keys/developers
+sudo=true
+basrc=$shell/bashrc

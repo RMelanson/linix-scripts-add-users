@@ -3,8 +3,4 @@ pkg=ADD_USERS
 gitRepo="linux-scripts-utils-add-users"
 installDir="/tmp/scripts/utils/$pkg"
 USERS=$installDir/users/*
-
-appServicesDir=/etc/init.d
-appProcessDir=$appServicesDir/appProcesses
-daemon=appServices.d
-testApp=" java -jar $appProcessDir/springBootHelloWorldDemo-0.1.0.jar"
+KEYS=$installDir/keyLocker

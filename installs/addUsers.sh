@@ -4,6 +4,9 @@
 # SETUP WILDFLY CONFIGURATION ENVIRONMENT AND PARAMETERS
 . ./env/setEnv.sh
 
+echo current directory = 
+pwd
+
 #PROCESS USERS
 for user in $USERS
 do

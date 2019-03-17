@@ -1,5 +1,4 @@
 #!/bin/bash
-webCurrDir=$PWD
 
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root or under sudo"
@@ -13,7 +12,10 @@ yum update -y
 yum install git -y
 
 # SETUP ENVIRONMENT AND PARAMETERS
-. ./env/setEnv.sh
+webCurrDir=$PWD
+pkg=ADD_USERS
+gitRepo="linux-scripts-utils-add-users"
+installDir="/tmp/scripts/utils/$pkg"
 
 if [ -f ~/.ssh/gitHub.key ]; then
    clone="git clone -git@github.com:RMelanson/"

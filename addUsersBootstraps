@@ -14,7 +14,7 @@ yum install git -y
 # SETUP ENVIRONMENT AND PARAMETERS
 webCurrDir=$PWD
 pkg=ADD_USERS
-gitRepo="linux-scripts-utils-add-users"
+gitRepo="linux-scripts-utils-add-users.git"
 installDir="/tmp/scripts/utils/$pkg"
 
 if [ -f ~/.ssh/gitHub.key ]; then

@@ -7,7 +7,7 @@
 echo current directory = 
 pwd
 
-function processUserFile{
+function processUserFile {
    userFile=$1
    echo "Adding User $userFile"
    cmd=prog

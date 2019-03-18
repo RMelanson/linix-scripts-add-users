@@ -3,4 +3,4 @@
 . ./env/setEnv.sh
 
 #------------------- INITIAL INSTALL --------------------
-./ ./installs/addusers.sh
+./installs/addusers.sh

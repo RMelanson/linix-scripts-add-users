@@ -9,17 +9,17 @@ pwd
 
 function processUserFile{
    userFile=$1
+   echo "Adding User $userFile"
    cmd=prog
    while read line
    do
-      echo line = line
+      echo processing line $line
    done < "$userFile"
 }
 
 #PROCESS USERS
 for userFile in $USERS
 do
-  echo "Processing $userFile file..."
-  # take action on each user file. Add user $user store
-  cat $userFile
+  # Add Users defined by UserFile
+  processUserFile $userFile
 done

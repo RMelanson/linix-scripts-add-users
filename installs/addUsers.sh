@@ -7,10 +7,19 @@
 echo current directory = 
 pwd
 
+function processUserFile{
+   userFile=$1
+   cmd=prog
+   while read line
+   do
+      echo line = line
+   done < "$userFile"
+}
+
 #PROCESS USERS
-for user in $USERS
+for userFile in $USERS
 do
-  echo "Processing $user file..."
+  echo "Processing $userFile file..."
   # take action on each user file. Add user $user store
-  cat $user
+  cat $userFile
 done

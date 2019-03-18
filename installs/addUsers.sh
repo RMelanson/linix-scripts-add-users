@@ -10,10 +10,9 @@ pwd
 function processUserFile {
    userFile=$1
    echo "Adding User $userFile"
-   cmd=prog
    while read line
    do
-      echo processing line $line
+      echo processing User property $line
    done < "$userFile"
 }
 

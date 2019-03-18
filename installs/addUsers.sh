@@ -10,9 +10,9 @@ pwd
 function processUserFile {
    userFile=$1
    echo "Adding User $userFile"
-   while read line
+   while read key value
    do
-      echo processing User property $line
+      echo processing User property key = $key with value $value
    done < "$userFile"
 }
 

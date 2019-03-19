@@ -1,4 +1,4 @@
 password ineedtolearn
-sshPubKey $keys/developers
+sshPubKey developers
 sudo true
-basrc $shell/bashrc
+basrc bashrc

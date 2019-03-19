@@ -12,7 +12,8 @@ echo "Adding User Shell Profile $shell"
       profile)
 #            ./installs/addSSH_PubKey.sh $value
             ;;
-      *) echo Unknown shell profile = $key with value $value          exit 1
+      *) echo Unknown shell profile = $key with value $value
+#      exit 1
          ;;
    esac
 exit 0

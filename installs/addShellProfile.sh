@@ -1,5 +1,8 @@
 user=$1
-shell=$2
+shellPath=$2
+
+shell=$(echo $shellPath | rev | cut -d/ -f1 | rev)
+
 echo "Adding User Shell Profile $shell"
 
    case "$shell" in

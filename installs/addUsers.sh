@@ -7,6 +7,8 @@
 function processUserFile {
    userFile=$1
    ./installs/addUser.sh $userFile
+   user=$(echo $userFile | rev | cut -d/ -f1 | rev)
+   echo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA USER = $user
    while read key value
    do
       echo processing User property key = $key with value $value

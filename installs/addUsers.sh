@@ -22,7 +22,7 @@ function processUserFile {
               ./installs/addSSH_PubKey.sh $userFile $value
               ;;
         sudo)
-              ./installs/addSudoAccess.sh $userFile $value
+              ./installs/addSudoAccess.sh $userFile
               ;;
         shell)
               ./installs/addShellProfile.sh $userFile $value

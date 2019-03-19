@@ -1,1 +1,2 @@
-   echo "Adding User $userFile"
+   user = $1
+   echo "Adding User $user"

@@ -1,2 +1,2 @@
-   user = $1
+   user=$1
    echo "Adding User $user"

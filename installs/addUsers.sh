@@ -16,22 +16,22 @@ function processUserFile {
 
       case "$key" in
         password)
-              ./installs/password.sh $value
+              ./installs/addPassword.sh $value
               ;;
         sshPubKey)
-              ./installs/sshPubKey.sh $value
+              ./installs/addSSH_PubKey.sh $value
               ;;
         sudo)
-              ./installs/sudo.sh $value
+              ./installs/addSudoAccess.sh $value
               ;;
         shell)
-              ./installs/addShell.sh $value
+              ./installs/addShellProfile.sh $value
               ;;
        *) echo Unknown property key = $key with value $value
              exit 1
              ;;
        esac
-       
+
    done < "$userFile"
    exit 0
 }

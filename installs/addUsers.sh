@@ -4,9 +4,6 @@
 # SETUP WILDFLY CONFIGURATION ENVIRONMENT AND PARAMETERS
 . ./env/setEnv.sh
 
-echo current directory = 
-pwd
-
 function processUserFile {
    userFile=$1
    ./installs/addUser.sh $userFile

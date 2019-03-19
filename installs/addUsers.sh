@@ -10,7 +10,7 @@ function processUserFile {
    ./installs/addUser.sh $user
    while read key value
    do
-      echo processing User property key = $key with value $value
+      echo processing User $user property key = $key with value $value
 
       case "$key" in
         password)

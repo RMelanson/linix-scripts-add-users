@@ -1,2 +1,3 @@
-keyFile=$1
-echo "Adding SSH Private Key $keyFile"
+user=$1
+keyFile=$2
+echo "Grant User $1 Sudo Access"

@@ -8,23 +8,22 @@ function processUserFile {
    userFile=$1
    ./installs/addUser.sh $userFile
    user=$(echo $userFile | rev | cut -d/ -f1 | rev)
-   echo AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA USER = $user
    while read key value
    do
       echo processing User property key = $key with value $value
 
       case "$key" in
         password)
-              ./installs/addPassword.sh $userFile $value
+              ./installs/addPassword.sh $user $value
               ;;
         sshPubKey)
-              ./installs/addSSH_PubKey.sh $userFile $value
+              ./installs/addSSH_PubKey.sh $user $value
               ;;
         sudo)
-              ./installs/addSudoAccess.sh $userFile
+              ./installs/addSudoAccess.sh $user
               ;;
         shell)
-              ./installs/addShellProfile.sh $userFile $value
+              ./installs/addShellProfile.sh $user $value
               ;;
        *) echo Unknown property key = $key with value $value
              exit 1

@@ -28,7 +28,7 @@ while read key value
         home)
               HOME_DIR="-d /home/$value"
               ;;
-        sshPubKey);
+        sshPubKey)
               SSH_KEY_CMD="mkdir ~$USER/.ssh; cp ./keyLocker/$value ~$USER/.ssh/authorized_keys;chown -R $USER ~$USER/.ssh; chmod 700 ~$USER/.ssh; chmod 600 ~$USER/.ssh/authorized_keys"
               ;;
         sudo)

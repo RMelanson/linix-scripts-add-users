@@ -1,17 +1,22 @@
    user=$1
    echo "Adding User $user"
 
-if [ "$#" -lt 4 ]
+if [ "$#" -lt 1 ]
 then
     echo "Illegal number of parameters $#"
+    return
+else
+   user=$1
 fi
 
-user=$1
-group=$2
-home=$3
-pkg=$4
+if [ "$#" -lt 2 ]
+then
+   shell=bash
+else
+   user=$2
+fi
 
-echo Adding user=$user, group=$group, home=$home pkg=$pkg
+echo Adding user=$user with shell $shell for pkg $pkg
 
 #Check if $pkg admin user exists
 if grep -q $user "/etc/passwd"; then

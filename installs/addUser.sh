@@ -29,10 +29,10 @@ while read key value
               HOME_DIR="-d /home/$value"
               ;;
         sshPubKey)
-              SSH_KEY_CMD="mkdir ~$USER/.ssh; cp ./keyLocker/$value ~$USER/.ssh/authorized_keys;chown -R $USER ~$USER/.ssh; chmod 700 ~$USER/.ssh; chmod 600 ~$USER/.ssh/authorized_keys"
+              SSH_CMD="mkdir ~$USER/.ssh; cp ./keyLocker/$value ~$USER/.ssh/authorized_keys;chown -R $USER ~$USER/.ssh; chmod 700 ~$USER/.ssh; chmod 600 ~$USER/.ssh/authorized_keys"
               ;;
         sudo)
-              SSH_CMD="cp ./
+              SUDO_CMD="TO DO CREATE SUDO CCMD"
               ;;
         shell)
               SHELL="-s /bin/$value"
@@ -48,5 +48,7 @@ ADD_USER_CMD="useradd $USER $PASSWORD $HOME_DIR $SHELL"
 
 echo EXECUTING $ADD_USER_CMD
 #$ADD_USER_CMD
-echo EXECUTING $SSH_KEY_CMD
-#SSH_KEY_CMD
+echo EXECUTING $SSH_CMD
+#SSH_CMD
+echo EXECUTING $SUDO_CMD
+#SUDO_CMD

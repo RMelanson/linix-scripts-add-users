@@ -11,6 +11,8 @@ if grep -q $USER "/etc/passwd"; then
    return
 fi
 
+./env/setEnv.sh
+
 echo "Adding User $USER"
  
 USER_FILE=$USERS/$USER

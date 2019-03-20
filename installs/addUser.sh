@@ -11,7 +11,7 @@ if grep -q $USER "/etc/passwd"; then
    return
 fi
 
-./env/setEnv.sh
+. ./env/setEnv.sh
 
 echo "Adding User $USER"
  

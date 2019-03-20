@@ -28,11 +28,11 @@ while read key value
         home)
               HOME_DIR="-d /home/$value"
               ;;
-        sshPubKey)
-              SSH_KEY=$value
+        sshPubKey);
+              SSH_KEY_CMD="mkdir ~$USER/.ssh; cp ./keyLocker/$value ~$USER/.ssh/authorized_keys;chown -R $USER ~$USER/.ssh; chmod 700 ~$USER/.ssh; chmod 600 ~$USER/.ssh/authorized_keys"
               ;;
         sudo)
-              ./installs/addSudoAccess.sh $USER
+              SSH_CMD="cp ./
               ;;
         shell)
               SHELL="-s /bin/$value"
@@ -44,17 +44,10 @@ while read key value
 
 done < "$USER_FILE"
 
-echo Adding user=$USER with shell $shell for pkg $pkg
+ADD_USER_CMD="useradd $USER $PASSWORD $HOME_DIR $SHELL"
 
-#Check if $pkg admin user exists
-if grep -q $USER "/etc/passwd"; then
-   echo User $USER exists: \*\*\* Not adding \*\*\*
-else
-   #Create $pkg admin user $USER and $pkg group $group
-   #Check if user directory exists and create it if it does not
+echo EXECUTING $ADD_USER_CMD
+#$ADD_USER_CMD
+echo EXECUTING $ADD_USER
 
-   useradd -M -s /bin/bash -g $group -d $home $USER
-   chown $USER:$group $home
-   #Add $user ssh access
-   cp -r ~ec2-user/.ssh $home
-fi
+#cp -r ~user/.ssh $home

@@ -11,11 +11,11 @@ if grep -q $USER "/etc/passwd"; then
    return
 fi
 
-. ./users/setEnv.sh
+. ./env/setEnv.sh
 
 echo "Adding User $USER"
  
-USER_FILE=$USERS/$USER
+USER_FILE=./users/$USER
 
 echo PROCESSING USERFILE $USER_FILE
 

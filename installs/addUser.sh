@@ -25,7 +25,7 @@ while read key value
 
       case "$key" in
         password)
-              PASSWORD="-p $value"
+              PASSWORD="-p $(openssl passwd -1 $value)"
               ;;
         home)
               HOME_DIR="-d /home/$value"

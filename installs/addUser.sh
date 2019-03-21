@@ -31,6 +31,7 @@ while read key value
               HOME_DIR="-d /home/$value"
               ;;
         sshPubKey)
+              . ./installs/addSSH_Security.sh
               SSH_CMD="mkdir ~$USER/.ssh; cp ./keyLocker/$value ~$USER/.ssh/authorized_keys;chown -R $USER ~$USER/.ssh; chmod 700 ~$USER/.ssh; chmod 600 ~$USER/.ssh/authorized_keys"
               ;;
         sudo)

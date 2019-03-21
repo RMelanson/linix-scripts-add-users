@@ -31,10 +31,10 @@ while read key value
               HOME_DIR="-d /home/$value"
               ;;
         sshPubKey)
-              ADD_SSH_CMD=". ./installs/addSSH_Security.sh"
+              ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh"
               ;;
         sudo)
-              ADD_SSH_CMD=". ./installs/addSudoAccess.sh"
+              ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
               ;;
         shell)
               SHELL="-s /bin/$value"
@@ -46,13 +46,13 @@ while read key value
 
 done < "$USER_FILE"
 
-ADD_USER_CMD="useradd $USER $PASSWORD $HOME_DIR $SHELL"
+ADD_NEW_USER="useradd $USER $PASSWORD $HOME_DIR $SHELL"
 
-echo EXECUTING $ADD_USER_CMD
-$ADD_USER_CMD
+echo EXECUTING $ADD_NEW_USER
+$ADD_NEW_USER
 
-echo EXECUTING $SSH_CMD
-$ADD_SSH_CMD
+echo EXECUTING $ADD_SSH_SECURITY
+$ADD_SSH_SECURITY
 
-echo EXECUTING $SUDO_CMD
-$ADD_SUDO_CMD
+echo EXECUTING $ADD_SUDO_ACCESS
+$ADD_SUDO_ACCESS

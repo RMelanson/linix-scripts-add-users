@@ -3,4 +3,4 @@
 . ./env/setEnv.sh
 
 #------------------- INITIAL INSTALL --------------------
-./installs/addUserTest.sh
+. ./installs/addUserTest.sh joe

@@ -28,7 +28,7 @@ while read key value
               PASSWORD="-p $(openssl passwd -1 $value)"
               ;;
         home)
-              HOME_DIR="-d /home/$value"
+              HOME_DIR="-d ~$USER"
               ;;
         sshPubKey)
               ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $value"

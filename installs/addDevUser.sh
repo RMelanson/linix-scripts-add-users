@@ -11,13 +11,12 @@ then
 fi
 
 USER=$1
+sshDevKey=$2
 
 if grep -q $USER "/etc/passwd"; then
    echo User $USER exists: \*\*\* Not adding \*\*\*
-   return
+   exit
 fi
-
-. ./env/setEnv.sh
 
 echo "Adding User $USER"
  

@@ -1,5 +1,7 @@
 #! /bin/bash
 # Setup the required environment
 . ./env/setEnv.sh
+user=$1
 #------------------- INITIAL INSTALL --------------------
-. ./installs/addDevUser.sh joe
+if []
+. ./installs/addDevUser.sh $user

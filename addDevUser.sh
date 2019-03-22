@@ -11,7 +11,7 @@ if [ $# -eq 0 ]
        echo "No user arguments supplied"
   else
        user=$1
-       addUser
+       addUser $user
 fi
 
 . ./env/setEnv.sh

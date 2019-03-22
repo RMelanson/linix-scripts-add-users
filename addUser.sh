@@ -11,7 +11,8 @@ if [ $# -eq 0 ]
        echo "No user arguments supplied"
   else
        user=$1
-       addUser $user
+       sshDevKey=$2
+       addUser $user $sshDevKey
 fi
 
 . ./env/setEnv.sh

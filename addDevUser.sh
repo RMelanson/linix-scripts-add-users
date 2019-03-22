@@ -1,7 +1,7 @@
 #! /bin/bash
 # Setup the required environment
 
-function addUser {
+function addUser() {
    echo "Adding Dev User $1"
    . ./installs/addDevUser.sh $1 $sshDevKey
 }

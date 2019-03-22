@@ -4,6 +4,12 @@ then
     return
 fi
 
+if [ "$#" -lt 2 ]
+then
+    echo "SSH_KEY Not specified ~ Illegal number of parameters $#"
+    exit
+fi
+
 USER=$1
 
 if grep -q $USER "/etc/passwd"; then

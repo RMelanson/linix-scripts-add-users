@@ -31,7 +31,7 @@ while read key value
               HOME_DIR="-d /home/$value"
               ;;
         sshPubKey)
-              ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh"
+              ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $value"
               ;;
         sudo)
               ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"

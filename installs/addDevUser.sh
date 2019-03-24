@@ -26,11 +26,7 @@ PASSWORD="-p $(openssl passwd -1 "ineedtolearn")"
 
 SHELL="-s /bin/bash"
 
-ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
-ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
-
 ADD_NEW_USER="useradd $USER $PASSWORD $SHELL"
-
 
 echo ########################################################################################
 
@@ -46,9 +42,12 @@ echo ###########################################################################
 echo EXECUTING $ADD_NEW_USER
 $ADD_NEW_USER
 
-echo ZZZZZZ EXECUTING "HOME_DIR=$(eval echo ~$USER)"
+echo EXECUTING "HOME_DIR=$(eval echo ~$USER)"
 HOME_DIR=$(eval echo ~$USER)
 echo ZZZZZZ HOME_DIR = $HOME_DIR
+
+ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
+ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
 
 
 

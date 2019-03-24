@@ -24,7 +24,7 @@ echo PROCESSING USERFILE $USER_FILE
 
 PASSWORD="-p $(openssl passwd -1 "ineedtolearn")"
 SHELL="-s /bin/bash"
-HOME_DIR=$(eval ~$USER)
+HOME_DIR=$(echo eval ~$USER)
 ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
 ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
 

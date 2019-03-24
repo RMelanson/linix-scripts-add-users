@@ -3,7 +3,7 @@
 
 function addUser() {
    echo "Adding Dev User $1"
-   . ./installs/addUser.sh $1 $2
+   . ./installs/addDevUser.sh $1 $2
 }
 
 if [ $# -eq 0 ]

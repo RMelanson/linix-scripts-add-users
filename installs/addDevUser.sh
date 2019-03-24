@@ -34,7 +34,7 @@ echo ###########################################################################
 
 echo PASSWORD = $PASSWORD
 echo SHELL = $SHELL
-HOME_DIR = $HOME_DIR
+echo HOME_DIR = $HOME_DIR
 echo ADD_SSH_SECURITY = $ADD_SSH_SECURITY
 echo ADD_SUDO_ACCESS = $ADD_SUDO_ACCESS
 echo ADD_NEW_USER = $ADD_NEW_USER

@@ -23,12 +23,18 @@ echo "Adding User $USER"
 echo PROCESSING USERFILE $USER_FILE
 
 PASSWORD="-p $(openssl passwd -1 "ineedtolearn")"
+
 SHELL="-s /bin/bash"
-HOME_DIR=$(eval echo ~$USER)
+
 ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
 ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
 
 ADD_NEW_USER="useradd $USER $PASSWORD $HOME_DIR $SHELL"
+
+echo ZZZZZZ EXECUTING "HOME_DIR=$(eval echo ~$USER)"
+HOME_DIR=$(eval echo ~$USER)
+echo ZZZZZZHOME_DIR = $HOME_DIR
+
 
 echo ########################################################################################
 

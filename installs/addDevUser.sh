@@ -19,6 +19,7 @@ if grep -q $USER "/etc/passwd"; then
 fi
 
 echo "====== ADDING NEW USER $USER ======"
+echo ########################################################################################
  
 echo PROCESSING USERFILE $USER_FILE
 
@@ -27,19 +28,19 @@ PASSWORD="-p $(openssl passwd -1 "ineedtolearn")"
 SHELL="-s /bin/bash"
 
 
-echo ########################################################################################
-
+echo USER = $USER
 echo PASSWORD = $PASSWORD
 echo SHELL = $SHELL
 ADD_NEW_USER="useradd $USER $PASSWORD $SHELL"
 echo ADD_NEW_USER = $ADD_NEW_USER
 
-echo ########################################################################################
 
 echo EXECUTING $ADD_NEW_USER
 $ADD_NEW_USER
 
 echo "====== ADDING NEW USER $USER SSH ACCESS ======"
+echo ########################################################################################
+
 echo EXECUTING "HOME_DIR=$(eval echo ~$USER)"
 HOME_DIR=$(eval echo ~$USER)
 echo HOME_DIR = $HOME_DIR
@@ -48,10 +49,11 @@ ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
 echo ADD_SSH_SECURITY = $ADD_SSH_SECURITY
 
 
+echo "====== ADDING NEW USER $USER SSH ACCESS ======"
+echo ########################################################################################
+
 ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
 echo ADD_SUDO_ACCESS = $ADD_SUDO_ACCESS
-
-
 
 # SLEEP FOR 1 SECOND GIVE TIME FOR USER TO BE CREATED BEFORE PROCEEDING
 sleep 1

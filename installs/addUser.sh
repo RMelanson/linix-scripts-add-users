@@ -67,6 +67,7 @@ ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $SSH_DEV_KEY"
 echo EXECUTING $ADD_SSH_SECURITY
 $ADD_SSH_SECURITY
 
+ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh $USER"
 echo EXECUTING $ADD_SUDO_ACCESS
-$ADD_SUDO_ACCESS
+$ADD_SUDO_ACCESS 
 echo ########################################################################################

@@ -31,7 +31,7 @@ while read key value
               HOME_DIR=$value
               ;;
         sshPubKey)
-              sshDevKey=$value
+              SSH_DEV_KEY=$value
               ;;
         sudo)
               SUDO_ACCESS=$value
@@ -63,7 +63,7 @@ sleep 1
 echo ----------------------------------------------------------------------------------------
 echo "====== ADDING NEW USER $USER SSH SECURITY ======"
 
-ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
+ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $SSH_DEV_KEY"
 echo EXECUTING $ADD_SSH_SECURITY
 $ADD_SSH_SECURITY
 

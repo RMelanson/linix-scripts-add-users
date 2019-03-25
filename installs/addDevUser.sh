@@ -38,28 +38,23 @@ echo ADD_NEW_USER = $ADD_NEW_USER
 echo EXECUTING $ADD_NEW_USER
 $ADD_NEW_USER
 
-echo "====== ADDING NEW USER $USER SSH ACCESS ======"
 echo ########################################################################################
+echo "====== ADDING NEW USER $USER SSH SECURITY ======"
 
 echo EXECUTING "HOME_DIR=$(eval echo ~$USER)"
 HOME_DIR=$(eval echo ~$USER)
 echo HOME_DIR = $HOME_DIR
 
 ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
-echo ADD_SSH_SECURITY = $ADD_SSH_SECURITY
-
-
-echo "====== ADDING NEW USER $USER SSH ACCESS ======"
-echo ########################################################################################
-
-ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
-echo ADD_SUDO_ACCESS = $ADD_SUDO_ACCESS
-
-# SLEEP FOR 1 SECOND GIVE TIME FOR USER TO BE CREATED BEFORE PROCEEDING
-sleep 1
 
 echo EXECUTING $ADD_SSH_SECURITY
 $ADD_SSH_SECURITY
+
+
+echo ########################################################################################
+echo "====== ADDING NEW USER $USER SUDO ACCESS ======"
+
+ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
 
 echo EXECUTING $ADD_SUDO_ACCESS
 $ADD_SUDO_ACCESS

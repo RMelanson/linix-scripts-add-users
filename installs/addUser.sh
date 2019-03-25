@@ -28,13 +28,13 @@ while read key value
               PASSWORD="-p $(openssl passwd -1 $value)"
               ;;
         home)
-              HOME_DIR="-d ~$USER"
+              HOME_DIR=$value
               ;;
         sshPubKey)
-              ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $value"
+              sshDevKey=$value
               ;;
         sudo)
-              ADD_SUDO_ACCESS=". ./installs/addSudoAccess.sh"
+              SUDO_ACCESS=$value
               ;;
         shell)
               SHELL="-s /bin/$value"
@@ -47,16 +47,26 @@ while read key value
 done < "$USER_FILE"
 
 ADD_NEW_USER="useradd $USER $PASSWORD $HOME_DIR $SHELL"
-
-
 echo EXECUTING $ADD_NEW_USER
 $ADD_NEW_USER
+
+echo ----------------------------------------------------------------------------------------
+echo "====== Extracting $USER Home Directiry ======"
+
+echo EXECUTING "HOME_DIR=$(eval echo ~$USER)"
+HOME_DIR=$(eval echo ~$USER)
+echo HOME_DIR = $HOME_DIR
 
 # SLEEP FOR 1 SECOND GIVE TIME FOR USER TO BE CREATED BEFORE PROCEEDING
 sleep 1
 
+echo ----------------------------------------------------------------------------------------
+echo "====== ADDING NEW USER $USER SSH SECURITY ======"
+
+ADD_SSH_SECURITY=". ./installs/addSSH_Security.sh $USER $sshDevKey"
 echo EXECUTING $ADD_SSH_SECURITY
 $ADD_SSH_SECURITY
 
 echo EXECUTING $ADD_SUDO_ACCESS
 $ADD_SUDO_ACCESS
+echo ########################################################################################

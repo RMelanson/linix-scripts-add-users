@@ -1,13 +1,13 @@
-if [ "$#" -lt 1 ]
+numArgs=$#
+if [ "$numArgs" -lt 2 ]
 then
-    echo "USER Not specified ~ Illegal number of parameters $#"
-    return
-fi
-
-if [ "$#" -lt 2 ]
-then
-    echo "SSH_KEY Not specified ~ Illegal number of parameters $#"
-    exit
+    if [ "$numArgs" -lt 1 ]
+    then
+        echo "USER Not specified ~ Illegal number of parameters $numArgs"
+    fi
+    echo "SSH_KEY Not specified ~ Illegal number of parameters $numArgs"
+    echo "Usage: addSSH_Security.sh USER_NAME SSH PUBLIC KEY"
+    exit -1
 fi
 
 USER=$1

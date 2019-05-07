@@ -1,6 +1,8 @@
 #!/bin/bash
+bootstrapDir=$PWD
+bootstrap=$bootstrapDir/ZZZZZZZZZZZZZZZZ.sh
 
-bootstrap=$webCurrDir/addUsersBootstraps.sh
+# Ensure script is running under root
 if [ "$EUID" -ne 0 ]
 then
    sudo -n true 2/dev/null 2>&1
